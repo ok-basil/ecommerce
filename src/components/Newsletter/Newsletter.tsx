@@ -1,6 +1,4 @@
-type Props = {}
-
-const Newsletter = (props: Props) => {
+const Newsletter = () => {
   return (
     <div className="w-[65%] h-[40vh] flex flex-col items-center justify-center m-auto py-0 px-[140px] bg-custom-gradient gap-7">
         <h1 className="text-[#454545] text-3xl font-semibold">Get Exclusive Offers In Your Email</h1>

@@ -1,8 +1,4 @@
-import React from 'react'
-
-type Props = {}
-
-const LoginSignup = (props: Props) => {
+const LoginSignup = () => {
   return (
     <div>LoginSignup</div>
   )

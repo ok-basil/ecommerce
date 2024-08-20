@@ -1,8 +1,6 @@
 import exclusiveImage from '@/assets/images/exclusive_image.png';
 
-type Props = {}
-
-const Offers = (props: Props) => {
+const Offers = () => {
     const headerStyle: string = 'text-[#171717] text-7xl font-semibold';
   return (
     <div className='w-[65%] h-[60vh] flex m-auto py-0 px-[140px] mb-[150px] bg-custom-gradient items-center justify-center'>

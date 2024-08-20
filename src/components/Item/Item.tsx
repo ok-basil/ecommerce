@@ -11,8 +11,8 @@ const Item = ({image, name, new_price, old_price}: Props) => {
   return (
     <div className='w-full basis-1/4 hover:scale-[1.05] hover:duration-[0.6s]'>
         <img src={image} alt="" />
-        <p className='mt-2 mr-0'>{name}</p>
-        <div className='flex gap-5'>
+        <p className='mt-2 mr-0 text-center w-[80%]'>{name}</p>
+        <div className='flex gap-5 w-[80%] justify-center'>
             <div className='text-[#374151] text-lg font-semibold'>
                 ${new_price}
             </div>
