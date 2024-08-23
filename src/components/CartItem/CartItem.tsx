@@ -11,9 +11,11 @@ const CartItem = () => {
         throw new Error("Product must be used within a ShopContextProvider");
     }
 
-    const { allProduct, addToCart, removeFromCart, cartItems } = context;
+    const { allProduct, addToCart, removeFromCart, cartItems, getTotalCartAmount } = context;
 
-    const cartStyle: string = "grid grid-cols-[0.5fr_2fr_1fr_1fr_1fr_1fr] items-center gap-[75px] py-5 px-0 text-color-[#454545] text-xl font-semibold"
+    const cartStyle: string = "grid grid-cols-[0.5fr_2fr_1fr_1fr_1fr_1fr] items-center gap-[75px] py-5 px-0 text-color-[#454545] text-xl font-semibold";
+
+    const cartTotal: string = "flex justify-between py-[15px] px-0";
 
     return (
     <div className='my-[100px] mx-[170px]'>
@@ -42,32 +44,32 @@ const CartItem = () => {
             }
             return null;
         })}
-        <div>
-            <div>
+        <div className='flex my-[100px] mx-0'>
+            <div className='flex-1 flex flex-col mr-[200px] gap-10'>
                 <h1>Cart Total</h1>
                 <div>
-                    <div>
+                    <div className={`${cartTotal}`}>
                         <p>Subtotal</p>
-                        <p>${0}</p>
+                        <p>${getTotalCartAmount()}</p>
                     </div>
                     <hr />
-                    <div>
+                    <div className={`${cartTotal}`}>
                         <p>Shipping Fee</p>
                         <p>Free</p>
                     </div>
                     <hr />
-                    <div>
+                    <div className={`${cartTotal}`}>
                         <h3>Total</h3>
-                        <h3>${0}</h3>
+                        <h3>${getTotalCartAmount()}</h3>
                     </div>
                 </div>
-                <button>PROCEED TO CHECKOUT</button>
+                <button className='w-[262px] h-[58px] outline-none border-none bg-[#FF5A5A] text-white text-[16px] font-semibold cursor-pointer'>PROCEED TO CHECKOUT</button>
             </div>
-            <div>
-                <p>If you have a promo code, enter it here</p>
-                <div>
-                    <input type="text" placeholder='Promo Code' />
-                    <button>Submit</button>
+            <div className='flex flex-col flex-1 font-medium text-[16px]'>
+                <p className='text-[#555555]'>If you have a promo code, enter it here</p>
+                <div className='w-[504px] mt-4 pl-5 h-[58px] bg-[#EAEAEA]'>
+                    <input className='border-none outline-none bg-transparent text-[16px] w-[330px] h-[50px]' type="text" placeholder='Promo Code' />
+                    <button className='w-[150px] h-[58px] text-[16px] bg-black text-white cursor-ppinter'>Submit</button>
                 </div>
             </div>
         </div>
