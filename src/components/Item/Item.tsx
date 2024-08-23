@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type Props = {
     id: number;
     image: string;
@@ -7,10 +9,10 @@ type Props = {
 
 }
 
-const Item = ({image, name, new_price, old_price}: Props) => {
+const Item = ({id, image, name, new_price, old_price}: Props) => {
   return (
     <div className='w-full basis-1/4 hover:scale-[1.05] hover:duration-[0.6s]'>
-        <img src={image} alt="" />
+        <Link to={`/product/${id}`}><img onClick={()=> window.scrollTo(0,0)} src={image} alt="" /></Link>
         <p className='mt-2 mr-0 text-center w-[80%]'>{name}</p>
         <div className='flex gap-5 w-[80%] justify-center'>
             <div className='text-[#374151] text-lg font-semibold'>

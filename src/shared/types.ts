@@ -4,3 +4,12 @@ export enum Categories {
     Womens = "womens",
     Kids = "kids"
 }
+
+export interface Product {
+    id: number;
+    name: string;
+    image: string;
+    new_price: number;
+    old_price: number;
+    category: string;
+}
